@@ -53,64 +53,46 @@ CMAKE_BINARY_DIR = /mnt/c/Users/AZ/Documents/GitHub/21f-pa01-arthur-zhang/cmake-
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: src/all
+all: CMakeFiles/art.dir/all
 
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall: src/preinstall
+preinstall:
 
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: src/clean
+clean: CMakeFiles/art.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Directory level rules for directory src
-
-# Recursive "all" directory target.
-src/all: src/CMakeFiles/src.dir/all
-
-.PHONY : src/all
-
-# Recursive "preinstall" directory target.
-src/preinstall:
-
-.PHONY : src/preinstall
-
-# Recursive "clean" directory target.
-src/clean: src/CMakeFiles/src.dir/clean
-
-.PHONY : src/clean
-
-#=============================================================================
-# Target rules for target src/CMakeFiles/src.dir
+# Target rules for target CMakeFiles/art.dir
 
 # All Build rule for target.
-src/CMakeFiles/src.dir/all:
-	$(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/depend
-	$(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/AZ/Documents/GitHub/21f-pa01-arthur-zhang/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target src"
-.PHONY : src/CMakeFiles/src.dir/all
+CMakeFiles/art.dir/all:
+	$(MAKE) -f CMakeFiles/art.dir/build.make CMakeFiles/art.dir/depend
+	$(MAKE) -f CMakeFiles/art.dir/build.make CMakeFiles/art.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/AZ/Documents/GitHub/21f-pa01-arthur-zhang/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target art"
+.PHONY : CMakeFiles/art.dir/all
 
 # Build rule for subdir invocation for target.
-src/CMakeFiles/src.dir/rule: cmake_check_build_system
+CMakeFiles/art.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/AZ/Documents/GitHub/21f-pa01-arthur-zhang/cmake-build-debug/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/src.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/art.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/AZ/Documents/GitHub/21f-pa01-arthur-zhang/cmake-build-debug/CMakeFiles 0
-.PHONY : src/CMakeFiles/src.dir/rule
+.PHONY : CMakeFiles/art.dir/rule
 
 # Convenience name for target.
-src: src/CMakeFiles/src.dir/rule
+art: CMakeFiles/art.dir/rule
 
-.PHONY : src
+.PHONY : art
 
 # clean rule for target.
-src/CMakeFiles/src.dir/clean:
-	$(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/clean
-.PHONY : src/CMakeFiles/src.dir/clean
+CMakeFiles/art.dir/clean:
+	$(MAKE) -f CMakeFiles/art.dir/build.make CMakeFiles/art.dir/clean
+.PHONY : CMakeFiles/art.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

@@ -15,10 +15,10 @@
 ########################
 
 //Value Computed by CMake
-21f_pa01_arthur_zhang_BINARY_DIR:STATIC=/mnt/c/Users/AZ/Documents/GitHub/21f-pa01-arthur-zhang/cmake-build-debug/src
+21f_pa01_arthur_zhang_BINARY_DIR:STATIC=/mnt/c/Users/AZ/Documents/GitHub/21f-pa01-arthur-zhang/cmake-build-debug
 
 //Value Computed by CMake
-21f_pa01_arthur_zhang_SOURCE_DIR:STATIC=/mnt/c/Users/AZ/Documents/GitHub/21f-pa01-arthur-zhang/src
+21f_pa01_arthur_zhang_SOURCE_DIR:STATIC=/mnt/c/Users/AZ/Documents/GitHub/21f-pa01-arthur-zhang
 
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=/usr/bin/addr2line
@@ -345,7 +345,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=2
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

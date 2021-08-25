@@ -111,17 +111,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named src
+# Target rules for targets named art
 
 # Build rule for target.
-src: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 src
-.PHONY : src
+art: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 art
+.PHONY : art
 
 # fast build rule for target.
-src/fast:
-	$(MAKE) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/build
-.PHONY : src/fast
+art/fast:
+	$(MAKE) -f CMakeFiles/art.dir/build.make CMakeFiles/art.dir/build
+.PHONY : art/fast
+
+src/main.o: src/main.cpp.o
+
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	$(MAKE) -f CMakeFiles/art.dir/build.make CMakeFiles/art.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) -f CMakeFiles/art.dir/build.make CMakeFiles/art.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) -f CMakeFiles/art.dir/build.make CMakeFiles/art.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -131,7 +158,10 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... src"
+	@echo "... art"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 
