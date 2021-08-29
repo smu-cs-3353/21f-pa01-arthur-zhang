@@ -9,8 +9,7 @@
 class painting {
 
     int price, x, y, ID, ratio;
-
-
+    int locX, locY;
 
 };
 

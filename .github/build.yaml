@@ -6,6 +6,7 @@ env:
   EXE_NAME: PA01
   INPUT_FILES: input.txt
   OUTPUT_FILES: test-bruteforce.txt test-highvalue.txt test-custom.txt
+  BUILD_TYPE: Release
 
 jobs:
   build:
