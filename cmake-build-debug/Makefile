@@ -150,6 +150,33 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/art.dir/build.make CMakeFiles/art.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/painting.o: src/painting.cpp.o
+
+.PHONY : src/painting.o
+
+# target to build an object file
+src/painting.cpp.o:
+	$(MAKE) -f CMakeFiles/art.dir/build.make CMakeFiles/art.dir/src/painting.cpp.o
+.PHONY : src/painting.cpp.o
+
+src/painting.i: src/painting.cpp.i
+
+.PHONY : src/painting.i
+
+# target to preprocess a source file
+src/painting.cpp.i:
+	$(MAKE) -f CMakeFiles/art.dir/build.make CMakeFiles/art.dir/src/painting.cpp.i
+.PHONY : src/painting.cpp.i
+
+src/painting.s: src/painting.cpp.s
+
+.PHONY : src/painting.s
+
+# target to generate assembly for a file
+src/painting.cpp.s:
+	$(MAKE) -f CMakeFiles/art.dir/build.make CMakeFiles/art.dir/src/painting.cpp.s
+.PHONY : src/painting.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -162,6 +189,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/painting.o"
+	@echo "... src/painting.i"
+	@echo "... src/painting.s"
 .PHONY : help
 
 
