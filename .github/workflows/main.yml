@@ -5,8 +5,9 @@ on: [push]
 env:
   EXE_NAME: PA01
   INPUT_FILES: input.txt
-  OUTPUT_FILES: test-bruteforce.txt test-highvalue.txt test-custom.txt
-
+  OUTPUT_FILES: 
+  BUILD_TYPE: Release
+  
 jobs:
   build:
     name: Project_Building
