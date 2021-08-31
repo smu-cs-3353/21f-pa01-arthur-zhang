@@ -123,6 +123,33 @@ art/fast:
 	$(MAKE) -f CMakeFiles/art.dir/build.make CMakeFiles/art.dir/build
 .PHONY : art/fast
 
+src/free.o: src/free.cpp.o
+
+.PHONY : src/free.o
+
+# target to build an object file
+src/free.cpp.o:
+	$(MAKE) -f CMakeFiles/art.dir/build.make CMakeFiles/art.dir/src/free.cpp.o
+.PHONY : src/free.cpp.o
+
+src/free.i: src/free.cpp.i
+
+.PHONY : src/free.i
+
+# target to preprocess a source file
+src/free.cpp.i:
+	$(MAKE) -f CMakeFiles/art.dir/build.make CMakeFiles/art.dir/src/free.cpp.i
+.PHONY : src/free.cpp.i
+
+src/free.s: src/free.cpp.s
+
+.PHONY : src/free.s
+
+# target to generate assembly for a file
+src/free.cpp.s:
+	$(MAKE) -f CMakeFiles/art.dir/build.make CMakeFiles/art.dir/src/free.cpp.s
+.PHONY : src/free.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -204,6 +231,33 @@ src/painting.cpp.s:
 	$(MAKE) -f CMakeFiles/art.dir/build.make CMakeFiles/art.dir/src/painting.cpp.s
 .PHONY : src/painting.cpp.s
 
+src/wall.o: src/wall.cpp.o
+
+.PHONY : src/wall.o
+
+# target to build an object file
+src/wall.cpp.o:
+	$(MAKE) -f CMakeFiles/art.dir/build.make CMakeFiles/art.dir/src/wall.cpp.o
+.PHONY : src/wall.cpp.o
+
+src/wall.i: src/wall.cpp.i
+
+.PHONY : src/wall.i
+
+# target to preprocess a source file
+src/wall.cpp.i:
+	$(MAKE) -f CMakeFiles/art.dir/build.make CMakeFiles/art.dir/src/wall.cpp.i
+.PHONY : src/wall.cpp.i
+
+src/wall.s: src/wall.cpp.s
+
+.PHONY : src/wall.s
+
+# target to generate assembly for a file
+src/wall.cpp.s:
+	$(MAKE) -f CMakeFiles/art.dir/build.make CMakeFiles/art.dir/src/wall.cpp.s
+.PHONY : src/wall.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -213,6 +267,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... art"
+	@echo "... src/free.o"
+	@echo "... src/free.i"
+	@echo "... src/free.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
@@ -222,6 +279,9 @@ help:
 	@echo "... src/painting.o"
 	@echo "... src/painting.i"
 	@echo "... src/painting.s"
+	@echo "... src/wall.o"
+	@echo "... src/wall.i"
+	@echo "... src/wall.s"
 .PHONY : help
 
 

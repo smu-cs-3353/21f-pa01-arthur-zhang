@@ -15,4 +15,4 @@ foreach(file IN LISTS input01 )
     configure_file(${file} ${file} COPYONLY)
 endforeach()
 
-add_executable(${EXE_NAME} src/main.cpp src/painting.cpp src/painting.h src/manager.cpp src/manager.h)
+add_executable(${EXE_NAME} src/main.cpp src/painting.cpp src/painting.h src/manager.cpp src/manager.h src/wall.cpp src/wall.h src/free.cpp src/free.h)

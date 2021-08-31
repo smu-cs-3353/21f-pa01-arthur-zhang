@@ -31,7 +31,11 @@ public:
     void setLocY(int in);
     void setLoc(int xin, int yin);
 
+
+
 };
+
+
 
 
 #endif //INC_21F_PA01_ARTHUR_ZHANG_PAINTING_H

@@ -62,3 +62,4 @@ void painting::setLoc(int xin, int yin){
     locX = xin;
     locY = yin;
 }
+

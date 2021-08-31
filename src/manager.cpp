@@ -43,16 +43,16 @@ void manager::readPic(ifstream& Text){
         picY = stoi(strtemp);
 //        test printout
         cout<< ID << " " << price << " " << picX << " " << picY <<endl;
+//        load painting into vectors
+        painting tempP(price, picX, picY, ID);
+        archive_default.emplace_back(tempP);
+        archive_price.emplace_back(tempP);
+        archive_area.emplace_back(tempP);
     }
-
-
-
-
-    pair <int, int> xANDy;
-
-//        get number of pictures
-
-
-//        get pictures: ID, price, size_x, size_y
-
 }
+
+void manager::sortPic(){
+    sort(archive_price.begin(), archive_price.end(), cmpPrice);
+    sort(archive_area.begin(), archive_area.end(), cmpArea);
+}
+
