@@ -4,8 +4,8 @@ on: [push]
 
 env:
   EXE_NAME: PA01
-  INPUT_FILES: input.txt
-  OUTPUT_FILES: test-bruteforce.txt test-highvalue.txt test-custom.txt
+  INPUT_FILES: src/input.txt
+  OUTPUT_FILES: test/test-bruteforce.txt test/test-highvalue.txt test/test-custom.txt
   BUILD_TYPE: Release
 
 jobs:

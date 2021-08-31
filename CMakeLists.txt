@@ -10,4 +10,9 @@ set (input01 "input.txt")
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(${EXE_NAME} src/main.cpp src/painting.cpp src/painting.h)
+# Copy data files to build dir
+foreach(file IN LISTS input01 )
+    configure_file(${file} ${file} COPYONLY)
+endforeach()
+
+add_executable(${EXE_NAME} src/main.cpp src/painting.cpp src/painting.h src/manager.cpp src/manager.h)

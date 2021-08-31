@@ -1,5 +1,23 @@
-#include <iostream>
+#include "manager.h"
+using namespace std;
 
-int main() {
-    std::cout << "Fall 2021 CS 3353 PA 01." << std::endl;
+int main(int argc, char** const argv) {
+
+    if (argv[1] == NULL)
+    {
+//        catch
+    }
+
+    ifstream file_input("input.txt");
+    ofstream brute_force("test-bruteforce.txt");
+    ofstream high_value("test-highvalue.txt");
+    ofstream custom ("test-custom.txt");
+    manager manage;
+    manage.run(file_input, brute_force, high_value, custom);
+
+    file_input.close();
+    brute_force.close();
+    high_value.close();
+    custom.close();
+    return 0;
 }
