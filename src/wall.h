@@ -11,7 +11,11 @@
 using namespace std;
 
 class wall {
+//    the class that keeps track of TOTAL value of the R on the wall,
+//    and the collection of those R
     vector<painting> wall;
+    int total_val; 
+
 };
 
 

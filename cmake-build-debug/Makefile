@@ -123,33 +123,6 @@ art/fast:
 	$(MAKE) -f CMakeFiles/art.dir/build.make CMakeFiles/art.dir/build
 .PHONY : art/fast
 
-src/free.o: src/free.cpp.o
-
-.PHONY : src/free.o
-
-# target to build an object file
-src/free.cpp.o:
-	$(MAKE) -f CMakeFiles/art.dir/build.make CMakeFiles/art.dir/src/free.cpp.o
-.PHONY : src/free.cpp.o
-
-src/free.i: src/free.cpp.i
-
-.PHONY : src/free.i
-
-# target to preprocess a source file
-src/free.cpp.i:
-	$(MAKE) -f CMakeFiles/art.dir/build.make CMakeFiles/art.dir/src/free.cpp.i
-.PHONY : src/free.cpp.i
-
-src/free.s: src/free.cpp.s
-
-.PHONY : src/free.s
-
-# target to generate assembly for a file
-src/free.cpp.s:
-	$(MAKE) -f CMakeFiles/art.dir/build.make CMakeFiles/art.dir/src/free.cpp.s
-.PHONY : src/free.cpp.s
-
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -267,9 +240,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... art"
-	@echo "... src/free.o"
-	@echo "... src/free.i"
-	@echo "... src/free.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

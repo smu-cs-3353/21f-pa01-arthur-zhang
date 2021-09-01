@@ -29,13 +29,14 @@ public:
 
     void sortPic();
 //    CMP logic
+//    sort by bigger first
     static bool cmpPrice(painting i, painting j){
-        return (i.getPrice() < j.getPrice());
+        return (i.getPrice() > j.getPrice());
     }
     static bool cmpArea(painting i1, painting i2){
         int first_area = i1.getX() * i1.getY();
         int sec_area = i2.getX() * i2.getY();
-        return (first_area < sec_area);
+        return (first_area > sec_area);
     }
 
 };

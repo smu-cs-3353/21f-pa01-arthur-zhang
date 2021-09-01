@@ -49,6 +49,8 @@ void manager::readPic(ifstream& Text){
         archive_price.emplace_back(tempP);
         archive_area.emplace_back(tempP);
     }
+    sortPic();
+    cout<<"pause prog"<<endl;
 }
 
 void manager::sortPic(){
