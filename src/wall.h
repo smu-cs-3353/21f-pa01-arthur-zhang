@@ -29,7 +29,8 @@ public:
 
 //    insert a painting R into the bottom left corner of a FREE rectangle with the longest X value (while fit)
 //    then split the remaining space into 2 free rectangles
-    void insert_R(painting R);
+//    return true if inserted, return false if no available free space
+    bool insert_R(painting R);
 
     static bool cmpX(painting i, painting j){
         return (i.getX() > j.getX());

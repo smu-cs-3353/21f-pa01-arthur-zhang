@@ -21,7 +21,7 @@ int wall::getVal(){
 
 //    insert a painting R into a FREE rectangle:
 
-void wall::insert_R(painting R){
+bool wall::insert_R(painting R){
 //    find the first fitting free space with the largest x value possible
     for (auto& it: free){
         int it_x = it.getX();
@@ -56,6 +56,10 @@ void wall::insert_R(painting R){
               free.emplace_back(newFree_b);
 //            sort the FREE vector based on longest X side
               sort(free.begin(), free.end(), cmpX);
+//            exit out out the loop and function because task completes
+              return true;
         }
+//      no free space satisfies the current R, jump into the next bin!
+        return false;
     }
 }
