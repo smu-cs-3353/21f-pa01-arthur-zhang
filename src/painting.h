@@ -9,6 +9,7 @@
 class painting {
 private:
     int price, x, y, ID;
+//    location means the x and y of this R's bottom left corner
     int locX, locY;
 
 public:
@@ -16,6 +17,8 @@ public:
     painting();
     painting(int p, int xin, int yin, int IDin);
 
+    //    copy constructor
+    painting(const painting &p1);
 //    getters and setters
     int getPrice();
     void setPrice(int in);

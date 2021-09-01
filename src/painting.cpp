@@ -22,6 +22,15 @@ painting::painting(int p, int xin, int yin, int IDin){
     locY = 0;
 }
 
+painting::painting(const painting &p1){
+    price = p1.price;
+    x = p1.x;
+    y = p1.y;
+    ID = p1.ID;
+    locX = p1.locX;
+    locY = p1.locY;
+}
+
 int painting::getPrice(){
     return price;
 }
