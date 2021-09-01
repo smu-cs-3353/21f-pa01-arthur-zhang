@@ -35,6 +35,8 @@ void wall::insert_R(painting R){
               tempR.setLoc(it.getLocX(), it.getLocY());
 //            update price
               total_val = total_val + tempR.getPrice();
+
+
 //            then split the remaining space into 2 free rectangles
 //            replace the original space with one of the 2 free rectangles, then emplace_back the other one
 //            sort
@@ -51,6 +53,9 @@ void wall::insert_R(painting R){
               newFree_a.setLocX(it.getLocX());
 //            manipulate FREE vector
               it = newFree_a;
+              free.emplace_back(newFree_b);
+//            sort the FREE vector based on longest X side
+              sort(free.begin(), free.end(), cmpX);
         }
     }
 }

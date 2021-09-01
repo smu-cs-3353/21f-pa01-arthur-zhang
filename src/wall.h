@@ -7,7 +7,7 @@
 
 #include "painting.h"
 #include <vector>
-
+#include <algorithm>
 using namespace std;
 
 class wall {
@@ -31,9 +31,9 @@ public:
 //    then split the remaining space into 2 free rectangles
     void insert_R(painting R);
 
-
-
-
+    static bool cmpX(painting i, painting j){
+        return (i.getX() > j.getX());
+    }
 
 };
 
