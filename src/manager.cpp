@@ -71,11 +71,26 @@ void manager::expensive_packing(){
 
 void manager::brute_packing(){
 
-    if (archive_size <= 10){
 
-    }
-    else {
+    int best_val = 0;
+    if (archive_size > 10){
 //        output "data set size exceeds maximum" to file
+    }
+    for (int i=0; i<50; i++){
+        wall temp_bin(wall_x, wall_y);
+        for (auto& it: archive_default){
+//        if no free space fit, return false and go next R
+            temp_bin.insert_R(it);
+        }
+        int temp_int = temp_bin.getVal();
+        if (temp_int > best_val){
+            best_val = temp_int;
+            default_bin = temp_bin;
+        }
+//        move the last element to the first
+        archive_default.emplace(archive_default.end());
+        archive_default.pop_back();
+
     }
 }
 
@@ -83,16 +98,25 @@ void manager::brute_packing(){
 void manager::custom_packing(){
 //    while stay_bin stays true, don't change bin
     bool stay_bin = true;
+//    initialize with one bin
+    wall init_bin (wall_x, wall_y);
+    bins.emplace_back(init_bin);
 //    for (archive doesnt run out)
     for (auto& it: archive_custom){
+//        for all the existing bins
         for (auto&it_bin: bins){
-            //        insert R into current wall
-            wall temp_bin (wall_x, wall_y);
-//        if no free space fit, return false and go next R
-// todo: needs work on moving to next bin
-            stay_bin = temp_bin.insert_R(it);
+//        insert R into current wall
+//        if no free space fit, return false and go next
+            stay_bin = it_bin.insert_R(it);
+            if (stay_bin == true){
+                break;
+            }
         }
-
+//        if no bin fits, create new bin then insert IT
+        wall temp_bin(wall_x, wall_y);
+        temp_bin.insert_R(it);
+        bins.emplace_back(temp_bin);
     }
-
+//    when all the pictures run out, sort bin vector by price
+        sort(bins.begin(), bins.end(), cmpBin);
 }

@@ -55,6 +55,9 @@ public:
         int sec_area = i2.getX() * i2.getY();
         return (first_area > sec_area);
     }
+    static bool cmpBin(wall i, wall j){
+        return (i.getVal() > j.getVal());
+    }
 
 };
 
