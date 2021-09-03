@@ -21,12 +21,13 @@ private:
     int total_val;
 
 public:
+    wall();
 //    input size of the canvas
     wall(int x, int y);
 
 
     int getVal();
-
+    void setup_free(int x, int y);
 //    insert a painting R into the bottom left corner of a FREE rectangle with the longest X value (while fit)
 //    then split the remaining space into 2 free rectangles
 //    return true if inserted, return false if no available free space

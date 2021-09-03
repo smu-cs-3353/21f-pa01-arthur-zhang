@@ -3,7 +3,9 @@
 //
 
 #include "wall.h"
-
+wall::wall(){
+    total_val = 0;
+};
 
 wall::wall(int x, int y){
 //    initialize the wall with its x and y size
@@ -11,6 +13,12 @@ wall::wall(int x, int y){
     free.emplace_back(R);
 //    initialize total value as 0
     total_val = 0;
+}
+
+void wall:: setup_free(int x, int y){
+    //    initialize the wall with its x and y size
+    painting R(0, x, y, 0);
+    free.emplace_back(R);
 }
 
 int wall::getVal(){
@@ -35,7 +43,8 @@ bool wall::insert_R(painting R){
               tempR.setLoc(it.getLocX(), it.getLocY());
 //            update price
               total_val = total_val + tempR.getPrice();
-
+//            put into USED
+              used.emplace_back(tempR);
 
 //            then split the remaining space into 2 free rectangles
 //            replace the original space with one of the 2 free rectangles, then emplace_back the other one
@@ -59,7 +68,8 @@ bool wall::insert_R(painting R){
 //            exit out out the loop and function because task completes
               return true;
         }
-//      no free space satisfies the current R, jump into the next bin!
-        return false;
+//
     }
+//    no free space satisfies the current R, jump into the next bin!
+    return false;
 }
