@@ -6,8 +6,7 @@
 #define INC_21F_PA01_ARTHUR_ZHANG_MANAGER_H
 
 #include <set>
-#include <iostream>
-#include <fstream>
+
 #include <sstream>
 
 
@@ -19,10 +18,10 @@ private:
     vector<painting> archive_default;
     vector<painting> archive_price;
     vector<painting> archive_custom;
+//    first bin in the bins is the custom output
     vector<wall> bins;
     wall default_bin;
     wall price_bin;
-    wall custom_bin;
 public:
     int wall_x, wall_y, archive_size;
 
@@ -41,6 +40,8 @@ public:
     void expensive_packing();
 
     void custom_packing();
+
+    void outputFile(ofstream& brute_force, ofstream& high_value, ofstream& custom);
 
 
 

@@ -15,6 +15,17 @@ wall::wall(int x, int y){
     total_val = 0;
 }
 
+wall& wall:: operator = (const wall &c){
+    for (auto& it_used: c.used){
+        used.emplace_back(it_used);
+    }
+    for (auto& it_free: c.free){
+        free.emplace_back(it_free);
+    }
+    total_val = c.total_val;
+    return *this;
+}
+
 void wall:: setup_free(int x, int y){
     //    initialize the wall with its x and y size
     painting R(0, x, y, 0);
@@ -26,7 +37,7 @@ int wall::getVal(){
 }
 
 
-
+//todo: bug inserting the rectangles, adding unwanted things into used bin
 //    insert a painting R into a FREE rectangle:
 
 bool wall::insert_R(painting R){
@@ -44,7 +55,12 @@ bool wall::insert_R(painting R){
 //            update price
               total_val = total_val + tempR.getPrice();
 //            put into USED
-              used.emplace_back(tempR);
+              if (tempR.getPrice() == 0){
+                  cout << "null price" <<endl;
+              }
+              else {
+                  used.emplace_back(tempR);
+              }
 
 //            then split the remaining space into 2 free rectangles
 //            replace the original space with one of the 2 free rectangles, then emplace_back the other one

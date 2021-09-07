@@ -8,7 +8,7 @@ int main(int argc, char** const argv) {
 //        catch
     }
 
-    ifstream file_input("input.txt");
+    ifstream file_input(argv[1]);
     ofstream brute_force("test-bruteforce.txt");
     ofstream high_value("test-highvalue.txt");
     ofstream custom ("test-custom.txt");

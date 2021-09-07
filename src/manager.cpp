@@ -6,7 +6,9 @@
 
 void manager::run(ifstream& input, ofstream& brute_force, ofstream& high_value, ofstream& custom){
     readPic(input);
+    brute_packing();
     expensive_packing();
+    custom_packing();
 }
 
 void manager::readPic(ifstream& Text){
@@ -76,7 +78,7 @@ void manager::brute_packing(){
     if (archive_size > 10){
 //        output "data set size exceeds maximum" to file
     }
-    for (int i=0; i<50; i++){
+    for (int i=0; i<archive_size; i++){
         wall temp_bin(wall_x, wall_y);
         for (auto& it: archive_default){
 //        if no free space fit, return false and go next R
@@ -92,9 +94,10 @@ void manager::brute_packing(){
         archive_default.pop_back();
 
     }
+    cout<< "brute" <<endl;
 }
 
-
+//todo: debug custom packing
 void manager::custom_packing(){
 //    while stay_bin stays true, don't change bin
     bool stay_bin = true;
@@ -111,12 +114,24 @@ void manager::custom_packing(){
             if (stay_bin == true){
                 break;
             }
+            else {
+                cout<<"doesn't fit, move to next bin"<<endl;
+            }
         }
-//        if no bin fits, create new bin then insert IT
-        wall temp_bin(wall_x, wall_y);
-        temp_bin.insert_R(it);
-        bins.emplace_back(temp_bin);
+//        if not a single bin fits, create new bin then insert IT
+        if (stay_bin == false){
+            wall temp_bin(wall_x, wall_y);
+            temp_bin.insert_R(it);
+            bins.emplace_back(temp_bin);
+            stay_bin = true;
+        }
     }
 //    when all the pictures run out, sort bin vector by price
-        sort(bins.begin(), bins.end(), cmpBin);
+    sort(bins.begin(), bins.end(), cmpBin);
+}
+
+void manager::outputFile(ofstream& brute_force, ofstream& high_value, ofstream& custom){
+//    output brute_force
+    brute_force << default_bin.getVal() <<endl;
+
 }

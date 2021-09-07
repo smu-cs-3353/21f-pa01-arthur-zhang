@@ -5,6 +5,8 @@
 #ifndef INC_21F_PA01_ARTHUR_ZHANG_WALL_H
 #define INC_21F_PA01_ARTHUR_ZHANG_WALL_H
 
+#include <iostream>
+#include <fstream>
 #include "painting.h"
 #include <vector>
 #include <algorithm>
@@ -25,6 +27,9 @@ public:
 //    input size of the canvas
     wall(int x, int y);
 
+    
+
+    wall& operator = (const wall &c);
 
     int getVal();
     void setup_free(int x, int y);
