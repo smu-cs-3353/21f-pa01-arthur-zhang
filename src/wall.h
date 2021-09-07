@@ -27,11 +27,14 @@ public:
 //    input size of the canvas
     wall(int x, int y);
 
-    
+    wall(const wall &c);
 
     wall& operator = (const wall &c);
 
     int getVal();
+
+    void output_max(ofstream& out);
+
     void setup_free(int x, int y);
 //    insert a painting R into the bottom left corner of a FREE rectangle with the longest X value (while fit)
 //    then split the remaining space into 2 free rectangles

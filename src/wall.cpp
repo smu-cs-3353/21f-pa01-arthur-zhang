@@ -15,7 +15,19 @@ wall::wall(int x, int y){
     total_val = 0;
 }
 
+wall:: wall(const wall &c){
+    for (auto& it_used: c.used){
+        used.emplace_back(it_used);
+    }
+    for (auto& it_free: c.free){
+        free.emplace_back(it_free);
+    }
+    total_val = c.total_val;
+}
+
 wall& wall:: operator = (const wall &c){
+    used.clear();
+    free.clear();
     for (auto& it_used: c.used){
         used.emplace_back(it_used);
     }
@@ -36,6 +48,11 @@ int wall::getVal(){
     return total_val;
 }
 
+void wall::output_max(ofstream& out){
+    for (auto& it: used){
+        out<< it.getID() <<" "<< it.getPrice() <<" "<< it.getX() <<" "<< it.getY() <<" "<< it.getLocX() <<" "<< it.getLocY() <<endl;
+    }
+}
 
 //todo: bug inserting the rectangles, adding unwanted things into used bin
 //    insert a painting R into a FREE rectangle:

@@ -9,6 +9,7 @@ void manager::run(ifstream& input, ofstream& brute_force, ofstream& high_value, 
     brute_packing();
     expensive_packing();
     custom_packing();
+    outputFile(brute_force, high_value, custom);
 }
 
 void manager::readPic(ifstream& Text){
@@ -126,12 +127,31 @@ void manager::custom_packing(){
             stay_bin = true;
         }
     }
-//    when all the pictures run out, sort bin vector by price
-    sort(bins.begin(), bins.end(), cmpBin);
 }
 
 void manager::outputFile(ofstream& brute_force, ofstream& high_value, ofstream& custom){
 //    output brute_force
-    brute_force << default_bin.getVal() <<endl;
+    if (archive_default.size()>10){
+        brute_force << "data set size exceeds maximum"<<endl;
+    }
+    else {
+        brute_force << default_bin.getVal() <<endl;
+        default_bin.output_max(brute_force);
+    }
+//    output expensive
+    high_value << price_bin.getVal() <<endl;
+    price_bin.output_max(high_value);
+//    output custom
+    int best_val = 0;
+    wall best_bin;
+    for (auto&it_bin: bins){
+        if (it_bin.getVal() > best_val){
+            best_bin = it_bin;
+            best_val = it_bin.getVal();
+        }
+    }
+    custom << best_bin.getVal() <<endl;
+    best_bin.output_max(custom);
+
 
 }
