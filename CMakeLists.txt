@@ -6,7 +6,7 @@ project(21f_pa01_arthur_zhang)
 
 set(EXE_NAME art)
 
-set (input01 "input.txt")
+set (input01 "test/input.txt")
 
 set(CMAKE_CXX_STANDARD 14)
 
