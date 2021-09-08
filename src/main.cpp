@@ -7,8 +7,9 @@ int main(int argc, char** const argv) {
     {
 //        catch
     }
+
     string filename = "test/";
-    filename+=argv[argc-1];
+    filename+=argv[1];
     ifstream file_input(filename);
     ofstream brute_force("test-bruteforce.txt");
     ofstream high_value("test-highvalue.txt");
