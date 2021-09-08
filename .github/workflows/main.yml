@@ -1,18 +1,24 @@
-name: PA01
+name: 21-pa01
 
 on: [push]
 
 env:
-  EXE_NAME: PA01
+  EXE_NAME: art
+  ### ***** Students!  Put the name of the input files and output files here.
+  ###   List them in the order that they need to appear in Argv param of main.
+  ###   Output Files will follow input files
+  ###   Note: These should be the actual names of the files.  No double quotes
   INPUT_FILES: input.txt
-  OUTPUT_FILES: test-bruteforce.txt test-custom.txt test-highvalue.txt
+  OUTPUT_FILES: test-bruteforce.txt test-highvalue.txt test-custom.txt
   BUILD_TYPE: Release
-  
+
+### DO NOT MODIFY ANYTHING BELOW THIS LINE!!!
+
 jobs:
   build:
     name: Project_Building
     runs-on: ubuntu-latest
-    timeout-minutes: 4
+    timeout-minutes: 3
 
     steps:
 
@@ -29,6 +35,7 @@ jobs:
           echo " "
           g++ --version
           cmake --version
+
       - name: Create build environment
         #run: cmake -E make_directory ${{runner.workspace}}/build
         run:  mkdir ${{runner.workspace}}/build
@@ -44,13 +51,15 @@ jobs:
         working-directory: ${{runner.workspace}}/build
         shell: bash
         # Execute the build.  You can specify a specific target with "--target <NAME>"
-        run: cmake --build . --config $BUILD_TYPE
+        run: echo $BUILD_TYPE && cmake --build . --config $BUILD_TYPE
+
+      - name: List contents of build directory
+        run: ls -al ${{runner.workspace}}/build
 
       - name: Run the project
         working-directory: ${{runner.workspace}}/build
         shell: bash
         run: ./$EXE_NAME $INPUT_FILES $OUTPUT_FILES input.txt
-        #        run: ./$EXE_NAME
 
       - name: Copy output files to artifact directory
         working-directory: ${{runner.workspace}}/build
@@ -61,8 +70,11 @@ jobs:
             echo "  Copying $f"
             cp $f artifacts/
           done
+
       - name: Upload output files to GitHub so they can be reviewed
         uses: actions/upload-artifact@v1
         with:
           name: project_output
           path: ${{runner.workspace}}/build/artifacts
+
+
