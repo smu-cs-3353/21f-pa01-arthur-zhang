@@ -4,7 +4,7 @@ on: [push]
 
 env:
   EXE_NAME: PA01
-  INPUT_FILES: input.txt
+  INPUT_FILES: test/input.txt
   OUTPUT_FILES: 
   BUILD_TYPE: Release
   
