@@ -4,7 +4,7 @@ on: [push]
 
 env:
   EXE_NAME: PA01
-  INPUT_FILES: test/input.txt test/gallery10.txt test/gallery25.txt test/gallery50.txt test/gallery100.txt
+  INPUT_FILES: input.txt
   OUTPUT_FILES: test-bruteforce.txt test-custom.txt test-highvalue.txt
   BUILD_TYPE: Release
   
@@ -49,7 +49,7 @@ jobs:
       - name: Run the project
         working-directory: ${{runner.workspace}}/build
         shell: bash
-        run: ./$EXE_NAME $INPUT_FILES $OUTPUT_FILES gallery10.txt
+        run: ./$EXE_NAME $INPUT_FILES $OUTPUT_FILES input.txt
         #        run: ./$EXE_NAME
 
       - name: Copy output files to artifact directory
