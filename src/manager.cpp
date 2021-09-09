@@ -45,8 +45,7 @@ void manager::readPic(ifstream& Text){
         picX = stoi(strtemp);
         getline(ss, strtemp, ' ');
         picY = stoi(strtemp);
-//        test printout
-        cout<< ID << " " << price << " " << picX << " " << picY <<endl;
+
 //        load painting into vectors
         painting tempP(price, picX, picY, ID);
         archive_default.emplace_back(tempP);
@@ -54,7 +53,7 @@ void manager::readPic(ifstream& Text){
         archive_custom.emplace_back(tempP);
     }
     sortPic();
-    cout<<"pause prog"<<endl;
+
 }
 
 void manager::sortPic(){
@@ -69,7 +68,7 @@ void manager::expensive_packing(){
 //        if no free space fit, return false and go next R
         price_bin.insert_R(it);
     }
-    cout<< "expensive packing done"<<endl;
+
 }
 
 void manager::brute_packing(){
@@ -95,7 +94,7 @@ void manager::brute_packing(){
         archive_default.pop_back();
 
     }
-    cout<< "brute" <<endl;
+
 }
 
 //todo: debug custom packing
@@ -116,7 +115,6 @@ void manager::custom_packing(){
                 break;
             }
             else {
-                cout<<"doesn't fit, move to next bin"<<endl;
             }
         }
 //        if not a single bin fits, create new bin then insert IT
