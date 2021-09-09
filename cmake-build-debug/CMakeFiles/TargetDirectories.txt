@@ -1,3 +1,0 @@
-/mnt/c/Users/AZ/Documents/GitHub/21f-pa01-arthur-zhang/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/mnt/c/Users/AZ/Documents/GitHub/21f-pa01-arthur-zhang/cmake-build-debug/CMakeFiles/edit_cache.dir
-/mnt/c/Users/AZ/Documents/GitHub/21f-pa01-arthur-zhang/cmake-build-debug/CMakeFiles/art.dir
