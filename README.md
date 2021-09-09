@@ -15,5 +15,11 @@
 ###   Custom Bin Packing: 
    The bin packing algorithm sorts the pictures in decreasing order by size. While iterating through the set of paintings, if a painting can't fit into the current wall, instead of skipping it over, we create another wall (or bin) to fill up. And future paintings that won't fit into previous bins would repeat this process until the set runs out of new paintings. In the end, we output the wall/bin with the most value.
    
+###   Running the Program
+   Copy the name of the input file (for example "input.txt) into the command line argument to read information for this file. The program would output 3 files for every algorithm that was used. 
+   
+###   Performance
+   Theoretically, in a scenario that the bigger a painting is, the more expensive it is (not really in the real world), the brute force method would have the most value on a wall because it tried every method. Then it's the bin packing because having multiple walls to choose from could lead to a more optimized output. And there is the most-expensive approach that only provides one wall that would be less optimized in space, yet has the most pricy paintings. 
+   While brute force method would always provide the best option, its runtime stacks up significantly as the dataset gets larger. For example, finding 11! combinations is 11 times more times to run the sorting function than 10! (which is already 3628800 times). Therefore, using the bin packing or expensive-first approach would be the way to go once the dataset expands. 
    
 
